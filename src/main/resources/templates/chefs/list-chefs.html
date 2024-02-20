@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Home Page</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Additional Details</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="chef : ${chefs}">
+                <td th:text="${chef.firstName}">First Name</td>
+                <td th:text="${chef.lastName}">Last Name</td>
+                <td>
+                    <!-- View chef details -->
+                    <a th:href="@{/chefs/details/{id}(id=${chef.id})}">View Details</a>
+                </td>
+                <td>
+                    <!-- Edit chef -->
+                    <a th:href="@{/chefs/showFormToUpdateChef(chefId=${chef.id})}">Edit</a>
+                </td>
+                <td>
+                    <!-- Delete chef -->
+                    <a th:href="@{/chefs/delete(chefId=${chef.id})}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add a link to navigate to a form to add a new chef -->
+    <div>
+        <a th:href="@{/chefs/showFormToAddChef}">Add New Chef</a>
+    </div>
+</body>
+</html>

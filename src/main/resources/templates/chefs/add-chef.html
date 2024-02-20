@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Add New Chef</title>
+</head>
+<body>
+    <form action="#" th:action="@{/chefs/save}"
+          th:object="${chef}" method="post">
+
+        <input type="text" th:field="*{firstName}" placeholder="First Name" />
+
+        <input type="text" th:field="*{lastName}" placeholder="Last Name" />
+
+        <input type="text" th:field="*{email}" placeholder="Email" />
+
+        <input type="text" th:field="*{contactNumber}" placeholder="Contact Number" />
+
+        <input type="text" th:field="*{address}" placeholder="Address" />
+
+        <input type="text" th:field="*{ethnicity}" placeholder="Ethnicity" />
+
+        <input type="text" th:field="*{cuisine}" placeholder="Cuisine" />
+
+        <input type="text" th:field="*{cost}" placeholder="Cost" />
+
+        <button type="submit">Save</button>
+    </form>
+
+    <div>
+        <a th:href="@{/chefs/list}">Back to Home Page</a>
+    </div>
+</body>
+</html>

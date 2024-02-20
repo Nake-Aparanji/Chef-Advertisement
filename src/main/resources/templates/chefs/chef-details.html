@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Chef Details</title>
+</head>
+<body>
+    <div>
+        <p>First Name: <span th:text="${chef.id}"></span></p>
+        <p>First Name: <span th:text="${chef.firstName}"></span></p>
+        <p>Last Name: <span th:text="${chef.lastName}"></span></p>
+        <p>Email: <span th:text="${chef.email}"></span></p>
+        <p>Contact Number: <span th:text="${chef.contactNumber}"></span></p>
+        <p>Address: <span th:text="${chef.address}"></span></p>
+        <p>Ethnicity: <span th:text="${chef.ethnicity}"></span></p>
+        <p>Cuisine: <span th:text="${chef.cuisine}"></span></p>
+        <p>Cost: <span th:text="${chef.cost}"></span></p>
+    </div>
+
+    <div>
+        <a th:href="@{/chefs/list}">Back to Home Page</a>
+    </div>
+</body>
+</html>
